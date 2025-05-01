@@ -1,0 +1,96 @@
+<!-- rocknroll-music.component.html -->
+
+<div class="music-container">
+  <!-- Einführung und Spotify-Player -->
+  <div class="intro-section">
+    <div class="text-section">
+      <p>
+        Wir werden oft gefragt, auf welche Musik man gut Rock 'n' Roll tanzen kann. Die Antwort ist denkbar simpel:
+        Auf fast alle Lieder mit einem 4/4-Takt. Es kommt nur auf die Geschwindigkeit des Lieds an, gemessen in
+        <strong>beats per minute (bpm)</strong> oder in Takten. Hierbei gilt einfach: 1 Takt = 4 bpm.
+      </p>
+      <p>
+        Damit man auf ein Lied Rock 'n' Roll tanzen kann, braucht man mindestens <strong>90 bpm</strong>.
+        Allerdings ist alles unter <strong>120 bpm</strong> so langsam, dass es nur dazu dient, um den Grundschritt zu üben.
+        Tanzbar wird es erst darüber: <strong>120 bis 150 bpm</strong> sind ein ganz gutes Tempo für den Anfänger-Kurs.
+        Danach wird das Tempo kontinuierlich gesteigert. Das Bronze-Abzeichen im Breitensport Rock 'n' Roll wird
+        schließlich auf bis zu <strong>176 bpm</strong> getanzt (44 Takte). Die Obergrenze des "Tanzbaren" für die
+        höchste Turnierklasse im Rock 'n' Roll liegt bei <strong>208 bpm</strong> (52 Takte).
+      </p>
+      <p>
+        Wenn ihr testen wollt, welches Tempo am besten zu euch passt, schaut euch doch mal den nebenstehenden
+        <strong>Spotify-Player</strong> an. Darin findet ihr Ausschnitte aus 100 Liedern, die nach bpm gestaffelt sind.
+        Lied Nr. 1 hat <strong>101 bpm</strong>, Lied Nr. 50 hat <strong>150 bpm</strong>, Lied Nr. 100 hat <strong>200 bpm</strong> und so weiter. Viel Spaß damit!
+      </p>
+      <p>
+        Falls ihr einen Spotify-Account habt, könnt ihr euch einloggen und die Lieder in voller Länge anhören.
+        Ansonsten wird euch nur ein 30-sekündiger Ausschnitt vorgespielt. Wer auch unsere anderen Playlists testen möchte,
+        kann uns auf Spotify folgen.
+      </p>
+    </div>
+
+    <div class="spotify-player">
+      <!-- Hier kannst du den Spotify-Embed-Code verwenden -->
+      <iframe src="https://open.spotify.com/" width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+
+  <!-- Rock'n'Roll Songs Tabelle -->
+  <mat-table [dataSource]="songsData" class="mat-elevation-z8">
+    <ng-container matColumnDef="song">
+      <mat-header-cell *matHeaderCellDef> Song </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.song }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="interpret">
+      <mat-header-cell *matHeaderCellDef> Interpret </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.interpret }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bpm">
+      <mat-header-cell *matHeaderCellDef> BPM </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.bpm }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="language">
+      <mat-header-cell *matHeaderCellDef> Sprache </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.language }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef> Jahr </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.year }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="genre">
+      <mat-header-cell *matHeaderCellDef> Genre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.genre }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="introLength">
+      <mat-header-cell *matHeaderCellDef> Intro-Länge </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.introLength }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="outroLength">
+      <mat-header-cell *matHeaderCellDef> Outro-Länge </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.outroLength }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="continuousBeat">
+      <mat-header-cell *matHeaderCellDef> Durchgängiger Takt </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.continuousBeat }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!-- Footer Hinweis -->
+  <div class="footer-section">
+    <p>
+      <strong>HINWEIS:</strong> Diese Seite wird in Privatinitiative gepflegt. Die Universität Mainz, Hochschule Rhein-Main
+      oder der Allgemeine Hochschulsport sind daher in keiner Weise zuständig und/oder verantwortlich für die Inhalte.
+    </p>
+  </div>
+</div>

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Definiere dein Standard-Thema (z. B. indigo/purple)
+$my-theme: mat.define-light-theme(
+  mat.define-palette(mat.$indigo),
+  mat.define-palette(mat.$purple, 500),
+  mat.define-palette(mat.$amber, 500)
+);
+
+@include mat.all-component-themes($my-theme);
+
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

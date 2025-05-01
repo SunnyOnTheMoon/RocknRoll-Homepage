@@ -1,0 +1,26 @@
+.nav-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 1rem;
+  
+    .nav-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  
+    a {
+      color: white;
+      text-decoration: none;
+      margin-left: 0.5rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
+  
