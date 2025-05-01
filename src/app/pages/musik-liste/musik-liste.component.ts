@@ -5,16 +5,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-musik-liste',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatCardModule,
-    MatButtonModule
-  ],
-  templateUrl: './musik-liste.component.html',
-  styleUrl: './musik-liste.component.scss'
+    selector: 'app-musik-liste',
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatCardModule,
+        MatButtonModule
+    ],
+    templateUrl: './musik-liste.component.html',
+    styleUrl: './musik-liste.component.scss'
 })
 export class MusikListeComponent {
 
