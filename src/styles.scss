@@ -1,17 +1,3 @@
-@use '@angular/material' as mat;
-
-@include mat.core();
-
-// Definiere dein Standard-Thema (z. B. indigo/purple)
-$my-theme: mat.define-light-theme(
-  mat.define-palette(mat.$indigo),
-  mat.define-palette(mat.$purple, 500),
-  mat.define-palette(mat.$amber, 500)
-);
-
-@include mat.all-component-themes($my-theme);
-
-
 body {
   margin: 0;
   font-family: Roboto, sans-serif;

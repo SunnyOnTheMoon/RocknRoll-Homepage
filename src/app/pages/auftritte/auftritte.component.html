@@ -1,5 +1,29 @@
-<h2>Auftritte</h2>
-<ul>
-  <li>Fastnacht 2024 – Mainz</li>
-  <li>Uni-Sommerfest 2023</li>
-</ul>
+<div class="main-container">
+  <div class="intro-section">
+    <div class="text-section">
+      <h1>Auftritte</h1>
+      <p>
+        Natürlich ist es immer schön, beim Trainieren ein Ziel vor Augen zu haben. Darum haben wir immer wieder Auftritte, um die Ergebnisse unserer Trainings zu präsentieren. Dabei zeigt sich immer aufs Neue, wie die Kombination aus Tanz und Akrobatik beim Rock'n'Roll die Zuschauer begeistert.
+      </p>
+      <p>Hier findet ihr die Videos zu unseren bisherigen Auftritten.</p>
+    </div>
+    <div class="image-section">
+      <img src="https://mainzer-uni-rocknroll.weebly.com/uploads/1/2/6/3/126319697/editor/img-3268.jpg?1577148416" alt="Auftritt" class="img-responsive" />
+    </div>
+  </div>
+
+  <!-- Beispiel für den Auftritt 04.11.2023 -->
+  <app-video-player 
+    [title]="auftritt1.title" 
+    [description]="auftritt1.description" 
+    [videoId]="auftritt1.videoId">
+  </app-video-player>
+
+  <!-- Weiteres Beispiel für den Auftritt 02.11.2023 -->
+  <app-video-player 
+    [title]="auftritt2.title" 
+    [description]="auftritt2.description" 
+    [videoId]="auftritt2.videoId">
+  </app-video-player>
+
+</div>
