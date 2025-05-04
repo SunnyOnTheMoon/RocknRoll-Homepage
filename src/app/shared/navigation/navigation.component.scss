@@ -1,26 +1,46 @@
 .nav-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+
+  .nav-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 1rem;
-  
-    .nav-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-  
+
     a {
       color: white;
       text-decoration: none;
       margin-left: 0.5rem;
-  
+
       &:hover {
         text-decoration: underline;
       }
     }
-  
-    .spacer {
-      flex: 1 1 auto;
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
+
+  .mobile-toggle {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: inline-flex;
+    }
+  }
+}
+
+.mobile-menu {
+  width: 250px;
+}
+
   

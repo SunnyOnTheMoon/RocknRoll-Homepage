@@ -1,12 +1,32 @@
-<mat-toolbar color="primary" class="nav-toolbar">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" class="mobile-menu">
+    <a mat-list-item routerLink="/" (click)="sidenav.close()">Home</a>
+    <a mat-list-item routerLink="/mainz" (click)="sidenav.close()">Mainz</a>
+    <a mat-list-item routerLink="/wiesbaden" (click)="sidenav.close()">Wiesbaden</a>
+    <a mat-list-item routerLink="/auftritte" (click)="sidenav.close()">Auftritte</a>
+    <a mat-list-item routerLink="/musik-liste" (click)="sidenav.close()">Musik</a>
+    <a mat-list-item routerLink="/tanzpartnerboerse" (click)="sidenav.close()">Tanzpartnerbörse</a>
+    <a mat-list-item routerLink="/impressum-datenschutz" (click)="sidenav.close()">Impressum</a>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary" class="nav-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()" class="mobile-toggle">
+      <mat-icon>menu</mat-icon>
+    </button>
+
     <span class="nav-title">Uni Rock'n'Roll</span>
     <span class="spacer"></span>
-  
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/mainz">Mainz</a>
-    <a mat-button routerLink="/wiesbaden">Wiesbaden</a>
-    <a mat-button routerLink="/auftritte">Auftritte</a>
-    <a mat-button routerLink="/musik-liste">Musik</a>
-    <a mat-button routerLink="/tanzpartnerboerse">Tanzpartnerbörse</a>
-    <a mat-button routerLink="/impressum-datenschutz">Impressum</a>
+
+    <div class="nav-links">
+      <a mat-button routerLink="/">Home</a>
+      <a mat-button routerLink="/mainz">Mainz</a>
+      <a mat-button routerLink="/wiesbaden">Wiesbaden</a>
+      <a mat-button routerLink="/auftritte">Auftritte</a>
+      <a mat-button routerLink="/musik-liste">Musik</a>
+      <a mat-button routerLink="/tanzpartnerboerse">Tanzpartnerbörse</a>
+      <a mat-button routerLink="/impressum-datenschutz">Impressum</a>
+    </div>
   </mat-toolbar>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
