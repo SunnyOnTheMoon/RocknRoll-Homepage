@@ -1,2 +1,76 @@
-<h2>Tanzpartnerbörse</h2>
-<p>Finde deinen Tanzpartner! Filtere nach Stadt, Erfahrung, Alter.</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6 max-w-xl mx-auto p-6 bg-white rounded-2xl shadow">
+    <h2 class="text-2xl font-bold">Tanzpartner:in gesucht</h2>
+  
+    <div>
+        <label class="block font-semibold mb-1">Name</label>
+        <input type="text" formControlName="name" class="form-input w-full" placeholder="Max Mustermann">
+    </div>
+
+    <div>
+      <label class="block font-semibold mb-1">Ich bin</label>
+      <select formControlName="role" class="form-select w-full">
+        <option value="follower">Follower</option>
+        <option value="leader">Leader</option>
+        <option value="Beides">Beides</option>
+      </select>
+    </div>
+  
+    <div>
+      <label class="block font-semibold mb-1">Ich suche</label>
+      <select formControlName="lookingFor" class="form-select w-full">
+        <option value="follower">Follower</option>
+        <option value="leader">Leader</option>
+        <option value="Beides">Beides</option>
+      </select>
+    </div>
+  
+    <div>
+      <label class="block font-semibold mb-1">Kurs</label>
+      <select formControlName="course" class="form-select w-full">
+        <option value="A-Kurs Mainz">A-Kurs (Mainz)</option>
+        <option value="L-Kurs Mainz">L-Kurs (Mainz)</option>
+        <option value="F-Kurs Mainz">F-Kurs (Mainz)</option>
+        <option value="Wiesbaden">Kurs (Wiesbaden)</option>
+      </select>
+    </div>
+  
+    <div>
+      <label class="block font-semibold mb-1">Kurzbeschreibung</label>
+      <textarea formControlName="description" rows="4" class="form-textarea w-full" placeholder="Ich heiße Anna, tanze seit 1 Jahr und suche..."></textarea>
+    </div>
+  
+    <div class="text-sm text-gray-500">
+      Datum: {{ today }}
+    </div>
+  
+    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" [disabled]="form.invalid">
+      Eintrag erstellen
+    </button>
+  </form>
+  
+  <div class="filters">
+    <label for="course">Kurs:</label>
+    <select id="course" [(ngModel)]="selectedCourse" (change)="filterRequests()">
+      <option value="">Alle Kurse</option>
+      <option value="A-Kurs">A-Kurs</option>
+      <option value="L-Kurs">L-Kurs</option>
+      <option value="F-Kurs">F-Kurs</option>
+      <option value="Wiesbaden">Wiesbaden</option>
+    </select>
+  
+    <label for="role">Gesucht:</label>
+    <select id="role" [(ngModel)]="selectedRole" (change)="filterRequests()">
+      <option value="">Alle</option>
+      <option value="Leader">Leader</option>
+      <option value="Follower">Follower</option>
+      <option value="Beides">Beides</option>
+    </select>
+  </div>
+  
+  <div class="tanzpartner-grid">
+    <app-tanzpartner-card-component
+      *ngFor="let request of filteredRequests"
+      [partnerRequest]="request">
+    </app-tanzpartner-card-component>
+  </div>
+  

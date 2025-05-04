@@ -1,0 +1,11 @@
+<div class="hero-container" *ngIf="content">
+  <div class="hero-left">
+    <h1>{{ content.header }}</h1>
+    <div *ngFor="let paragraph of content.paragraphs">
+      <p>{{ paragraph }}</p>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img [src]="content.picture" alt="Hero Image">
+  </div>
+</div>

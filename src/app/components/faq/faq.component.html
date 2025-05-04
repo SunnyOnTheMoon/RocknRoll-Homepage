@@ -1,0 +1,13 @@
+<div class="faq-container" *ngIf="faqs">
+    <div *ngFor="let faq of faqs" class="faq-item" (click)="toggleAnswer(faq)">
+      <div class="faq-item-header">
+        <h3>{{ faq.question }}</h3>
+        <span class="toggle-btn" [ngClass]="{'open': faq.isOpen}">
+          {{ faq.isOpen ? 'Antwort schließen' : 'Antwort anzeigen' }}
+        </span>
+      </div>
+      <div *ngIf="faq.isOpen" class="faq-item-body">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>

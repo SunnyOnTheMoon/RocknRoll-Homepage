@@ -1,0 +1,64 @@
+// FAQ-Komponenten Styles
+
+.faq-container {
+    background-color: #f9f5ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-item {
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #d7b3f9;  // Lila Hover-Effekt
+    }
+  }
+  
+  .faq-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    h3 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1f2937;  // Dunkles Textfarbe
+      margin: 0;
+    }
+  
+    .toggle-btn {
+      font-size: 1.1rem;
+      color: #7c3aed;  // Hauptfarbe (Lila)
+      cursor: pointer;
+      transition: color 0.3s;
+  
+      &.open {
+        color: #6b21a8;  // Dunkleres Lila für 'Antwort schließen' Zustand
+      }
+  
+      &:hover {
+        color: #6b21a8;  // Dunkleres Lila für Hover-Effekt
+      }
+    }
+  }
+  
+  .faq-item-body {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #1f2937;  // Dunkles Textfarbe
+    line-height: 1.5;
+    display: block;  // Zeige immer den Body, wenn 'open' true ist
+    padding-top: 10px;
+  }
+  
+  .faq-item.open {
+    .faq-item-body {
+      display: block;  // Wenn die FAQ geöffnet ist, zeigen wir die Antwort
+    }
+  }
+  

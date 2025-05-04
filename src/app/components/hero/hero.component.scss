@@ -1,0 +1,58 @@
+/* hero.component.scss */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #f9f5ff;  // Konsistente Hintergrundfarbe
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.hero-left {
+  flex: 1;
+  padding-right: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1f2937;  // Konsistente dunkle Textfarbe
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #1f2937;  // Konsistente Textfarbe
+  }
+}
+
+.hero-right {
+  flex: 1;
+  img {
+    width: 80%;  // Bildgröße auf 80% der verfügbaren Breite setzen
+    max-width: 400px;  // Maximalbreite des Bildes festlegen
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;  // Bild zentrieren
+    display: block;  // Block-Element, um es zentriert darzustellen
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hero-right img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
